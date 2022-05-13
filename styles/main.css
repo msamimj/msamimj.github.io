@@ -1,22 +1,56 @@
+@font-face {
+    font-family: koulen;
+    src: url(../assets/fonts/koulen.ttf);
+}
+
+@font-face {
+    font-family: montserratLight;
+    src: url(../assets/fonts/montserrat-light.ttf);
+}
+
+@font-face {
+    font-family: montserratRegular;
+    src: url(../assets/fonts/montserrat-regular.ttf);
+}
+
 * { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-.section-intro {
-    padding: 0 0 5em;
-}
-
-.section-intro > #name {
-    margin-bottom: 1em;
+    font-family: montserratRegular, sans-serif;
 }
 
 #content {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+}
+
+#sections-switch-wrapper {
+    display: none;
+}
+
+body.js-enabled #sections-switch-wrapper {
+    display: block  ;
+    background-color: #555;
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    border-radius: 1.5em;
+}
+
+.sections-switch-section {
+    width: 3em;
+    height: 3em;
+    float: left;
+    border-radius: 50%;
+}
+
+.sections-switch-section.enabled {
+    width: 3em;
+    height: 3em;
+    background-color: #fff;
+    border: 0.75em solid black;
 }
 
 body.js-enabled #sections-wrapper {
@@ -32,7 +66,7 @@ body.js-enabled #sections-wrapper {
 }
 
 body.js-enabled .section {
-    padding: 5em 5% 2em;
+    padding: 5em 7em 2em;
     width: 100%;
     height: 100%;
     overflow-y: scroll;
@@ -43,26 +77,60 @@ body.js-enabled .section {
     display: none;  /* Safari and Chrome */
 }
 
-#sections-switch {
-    display: none;
+.section-intro {
+    padding: 0 0 5em;
 }
 
-body.js-enabled #sections-switch {
-    display: block  ;
-    width: 2em;
-    height: 2em;
-    background-color: #555;
-    position: absolute;
+.section-intro > #name {
+    font-family: koulen, sans-serif;
+    font-size: 4em;
+    margin-bottom: .3em;
 }
+
+.section-intro > #bio {
+    font-size: 1.2em;
+    /* margin-bottom: 5em; */
+}
+
 
 #section-empathy {
     background-color: #eee;
 }
 
 #section-pop {
-    background-color: #999;
+    background-color: #5FF;
 }
 
-.section-content {
-    height: 1000px;
+.item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5em;
+    align-items: flex-start;
+    text-align: justify;
+    flex-basis: 33%;
+    gap: 1em;
+    border-top: 1px solid #ccc;
+}
+
+.item .content {
+    display: flex;
+    gap: 3em;
+    align-items: flex-start
+}
+
+.item img {
+    width: 40%;
+    border-radius: 0.25em;
+}
+
+.item .header {
+    font-family: koulen, sans-serif;
+    font-size: 2em;
+    margin-top: 0.5em;
+}
+
+.item .description {
+    font-size: 0.9em;
+    line-height: 1.5em;
 }
