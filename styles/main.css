@@ -1,0 +1,56 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: red;
+}
+
+.section-intro {
+    padding: 0 0 5em;
+}
+
+.section-intro > #name {
+    margin-bottom: 1em;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+#sections-wrapper {
+    width: 200%;
+    min-height: 100%;
+    display: flex;
+    background-color: black;
+}
+
+.section {
+    padding: 5em 5% 2em;
+    width: 100%;
+    min-height: 100%;
+}
+
+#sections-switch {
+    width: 2em;
+    height: 2em;
+    background-color: #555;
+    position: absolute;
+}
+
+#section-empathy {
+    background-color: #eee;
+}
+
+#section-pop {
+    background-color: #999;
+}
+
+.section-content {
+    height: 1000px;
+}
