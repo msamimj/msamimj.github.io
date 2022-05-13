@@ -9,9 +9,14 @@ let sectionsCount = sectionsList.length;
 document.body.classList.add("js-enabled");
 
 sectionsSwitch.addEventListener("click", () => {
+    currentSection = (++currentSection)%sectionsCount;
+    sectionWidth = sectionsList[0].clientWidth;
     content.scroll({
+        left: sectionWidth*currentSection,
+        behavior: 'smooth'
+    });
+    sectionsList[currentSection].scroll({
         top: 0,
-        left: (sectionsList[0].clientWidth*((++currentSection)%sectionsCount)),
         behavior: 'smooth'
     });
 })
